@@ -14,22 +14,21 @@ local okTable = {
 }
 
 local function run(startNumber, endNumber)
-    local running = true
-    while running do 
-        if startNumber == endNumber then 
-            running = false
+    while true do 
+        if startNumber == endNumber + 1 then 
+            break
         end
-        print(startNumber)
-        table.insert(okTable, tableNumber, startNumber .. ", ")
-        tableNumber = tableNumber + 1
-        startNumber = startNumber + 1
+            print(startNumber)
+            if startNumber ~= endNumber then
+                table.insert(okTable, tableNumber, startNumber .. ", ")
+            else
+                table.insert(okTable, tableNumber, "and " .. startNumber .. ". ")
+            end
+            tableNumber = tableNumber + 1
+            startNumber = startNumber + 1
     end
 end
 
-
-
-
---table.insert(okTable, tableNumber, "newplayer")
 print("\n\n")
 run(0, 10)
 print("\n" .. table.concat(okTable))
