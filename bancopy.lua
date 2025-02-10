@@ -15,20 +15,25 @@ local okTable = {
 
 local function run(startNumber, endNumber)
     while true do 
-        if startNumber == endNumber + 1 then 
-            break
-        end
-            print(startNumber)
+            if startNumber == endNumber + 1 then 
+                break
+            end
+        print(startNumber)
             if startNumber ~= endNumber then
                 table.insert(okTable, tableNumber, startNumber .. ", ")
             else
                 table.insert(okTable, tableNumber, "and " .. startNumber .. ". ")
             end
             tableNumber = tableNumber + 1
-            startNumber = startNumber + 1
+            
+            if startNumber <= endNumber then
+                startNumber = startNumber + 1
+            else 
+                startNumber = startNumber - 1
+            end
     end
 end
 
 print("\n\n")
-run(0, 50000)
+run(10, 0)
 print("\n" .. table.concat(okTable))
