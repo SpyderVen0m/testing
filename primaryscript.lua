@@ -13,38 +13,38 @@ local okTable = {
     [3] = player3 .. ", "
 }
 
-local function run(startNumber, endNumber)
-    local firstNumber = startNumber    
+local function run(currentNumber, endNumber)
+    local firstNumber = currentNumber    
     
     while true do 
         if firstNumber <= endNumber then
-            if startNumber == endNumber + 1 then 
-                    break
-            end
-            print(startNumber)
-            if startNumber ~= endNumber then
-                table.insert(okTable, tableNumber, startNumber .. ", ")
-            else
-                table.insert(okTable, tableNumber, "and " .. startNumber .. ". ")
-            end
-            tableNumber = tableNumber + 1
-            startNumber = startNumber + 1
-        else 
-            if startNumber == endNumber - 1 then 
+            if currentNumber == endNumber + 1 then 
                 break
             end
-            print(startNumber)
-            if startNumber ~= endNumber then
-                table.insert(okTable, tableNumber, startNumber .. ", ")
-            else
-                table.insert(okTable, tableNumber, "and " .. startNumber .. ". ")
+        else
+            if currentNumber == endNumber - 1 then 
+                break
             end
-            tableNumber = tableNumber + 1
-            startNumber = startNumber - 1
+        end
+        
+        print(currentNumber)
+        
+        if currentNumber ~= endNumber then
+            table.insert(okTable, tableNumber, currentNumber .. ", ")
+        else
+            table.insert(okTable, tableNumber, "and " .. currentNumber .. ". ")
+        end
+        
+        tableNumber = tableNumber + 1
+        
+        if firstNumber <= endNumber then
+            currentNumber = currentNumber + 1
+        else
+            currentNumber = currentNumber - 1
         end
     end
 end
 
 print("\n\n")
-run(10, 0)
+run(0, 100)
 print("\n" .. table.concat(okTable))
