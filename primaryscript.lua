@@ -46,5 +46,5 @@ local function run(currentNumber, endNumber)
 end
 
 print("\n\n")
-run(0, 100)
+run(100, 0)
 print("\n" .. table.concat(okTable))
