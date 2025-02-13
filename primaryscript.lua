@@ -5,12 +5,9 @@ end
 local player1 = "test"
 local player2 = "testing test"
 local player3 = "testing test tester"
-local tableNumber = 4
+local tableNumber = 1
 
 local okTable = {
-    [1] = player1 .. ", ", 
-    [2] = player2 .. ", ", 
-    [3] = player3 .. ", "
 }
 
 local function run(currentNumber, endNumber)
@@ -46,5 +43,5 @@ local function run(currentNumber, endNumber)
 end
 
 print("\n\n")
-run(100, 0)
+run(0, 1000)
 print("\n" .. table.concat(okTable))
