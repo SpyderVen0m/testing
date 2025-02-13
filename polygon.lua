@@ -19,4 +19,4 @@ local function run(mode, n)
     end
 end
 
-run(1, 12)
+run(1, 45)
