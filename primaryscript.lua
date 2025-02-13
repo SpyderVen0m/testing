@@ -7,8 +7,7 @@ local player2 = "testing test"
 local player3 = "testing test tester"
 local tableNumber = 1
 
-local okTable = {
-}
+local okTable = {}
 
 local function run(currentNumber, endNumber)
     local firstNumber = currentNumber    
