@@ -8,14 +8,18 @@ local numbertwo = math.random(minTwo, maxTwo)
 local searching = true
 local probability = maxOne * maxTwo
 
-while searching do
-    if numberone == 2 and numbertwo == 13 then
-        searching = false
-        print("\n\n\nfound numbers " .. numberone .. ", " .. numbertwo .. " in " .. attempt .. " attempts.        probability was 1 in " .. probability)
-    else
-        numberone = math.random(minOne, maxOne)
-        numbertwo = math.random(minTwo, maxTwo)
-        attempt = attempt + 1
-        print("attempt " .. attempt .. ", numbers " .. numberone .. ", " .. numbertwo)
+local function run(one, two)
+    while true do
+        if numberone == one and numbertwo == two then
+            print("\n\n\nfound numbers " .. numberone .. " and " .. numbertwo .. " in " .. attempt .. " attempts.        probability was 1 in " .. probability)
+            break
+        else
+            numberone = math.random(minOne, maxOne)
+            numbertwo = math.random(minTwo, maxTwo)
+            attempt = attempt + 1
+            print("attempt " .. attempt .. ", numbers " .. numberone .. ", " .. numbertwo)
+        end
     end
 end
+
+run(4, 8)
