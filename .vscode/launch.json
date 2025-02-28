@@ -8,7 +8,7 @@
             "type": "lua",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/numberfinder.lua"
+            "program": "${workspaceFolder}/counting.lua"
         }
     ]
 }
